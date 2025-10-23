@@ -32,6 +32,7 @@ VALUES
 
 select * from Funcionarios;
 
+# Desafio 1: Mapeamento de Departamentos
 select 
 	d.nome as Departamento,
 	f.nome as Funcionario
@@ -43,7 +44,7 @@ ON d.id_departamento = f.id_departamento
 ORDER By f.nome;
 
 insert into Departamentos(nome)
-values ('Inovação');
+values ('Inovação'); --como não tinha colocado o departamento pedido, tive que fazer insert
 
 select 
 	d.nome as Departamento,
@@ -55,10 +56,11 @@ Left join
 ON d.id_departamento = f.id_departamento 
 ORDER By d.nome;
 
+#Desafio 2: Classificação de Salários
+-- Como não tiha colocado a tabela de salários, coloquei depois	
+
 alter table Funcionarios 
 add salario decimal(10,2);
-
-
 
 update Funcionarios 
 set salario = 2750.50
@@ -113,6 +115,7 @@ left join Faixas_Salarios s
 on f.salario between s.salario_min and s.salario_max
 order by salario;
 
+# Desafio 3: Relatório Específico
 select
 f.nome as Funcionario,
 f.salario as Salario,
